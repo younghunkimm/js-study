@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!--
+    head + async
+    HTML을 parsing 하다가 asyn가 있으면 병렬로 main.js를 다운
+    main.js가 다운이 완료되면 나머지 html을 다시 parsing
+    장점 : js의 fetching이 parsing하는 동안 병렬적으로 일어나서 다운하는 시간을 절약
+    단점 : js파일에서 요소를 조작하려하면 정의되어있지 않다고 나올 수 있음, 사용자가 페이지를 보는데 시간이 걸림
+    <script asyn src="./main.js"></script>
+  -->
+  <!--
+    head + defer
+    HTML을 parsing 하다가 defer을 만나면 HTML을 모두 parsing 끝낸 후 js를 실행
+    효율적이고 안전한 방법
+    <script defer src="./main.js"></script>
+  -->
+  <script defer src="./variable.js"></script>
+</head>
+<body>
+  
+</body>
+</html>
