@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chart-js</title>
+  <script src="./chart.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <canvas id="myChartOne"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChartTwo"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChartThree"></canvas>
+      </div>
+      <div class="col-md-6">
+        <canvas id="myChartFour"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let myChartOne = document.getElementById('myChartOne').getContext('2d');
+    let myChartTwo = document.getElementById('myChartTwo').getContext('2d');
+    let myChartThree = document.getElementById('myChartThree').getContext('2d');
+    let myChartFour = document.getElementById('myChartFour').getContext('2d');
+
+    let barChart = new Chart(myChartOne, {
+      type: 'bar', // pie, line, doughnut, polarArea
+      data: {
+        labels: ['학원', '연구원', '출판사', '미디어사', '위니브'],
+        datasets: [{
+          label: '바울랩 매출액',
+          data: [10, 100, 100, 200, 1000],
+        }],
+      }
+    })
+
+    let barChartTwo = new Chart(myChartTwo, {
+      type: 'bar', // pie, line, doughnut, polarArea
+      data: {
+        labels: ['학원', '연구원', '출판사', '미디어사', '위니브'],
+        datasets: [{
+          label: '바울랩 매출액',
+          data: [400, 200, 250, 700, 1000],
+          backgroundColor: ['tomato', 'rgba(255, 255, 0, 0.5)', '#993300', 'skyblue', 'dodgerblue'],
+          borderWidth: 3,
+          borderColor: '#000',
+          hoverBorderWidth: 5,
+          hoverBorderColor: 'red',
+        }],
+      }
+    })
+
+    let barChartThree = new Chart(myChartThree, {
+      type: 'bar', // pie, line, doughnut, polarArea
+      data: {
+        labels: ['학원', '연구원', '출판사', '미디어사', '위니브'],
+        datasets: [{
+          label: '바울랩 매출액',
+          data: [400, 200, 250, 700, 1000],
+          backgroundColor: ['tomato', 'rgba(255, 255, 0, 0.5)', '#993300', 'skyblue', 'dodgerblue'],
+          borderWidth: 3,
+          borderColor: '#000',
+          hoverBorderWidth: 5,
+          hoverBorderColor: 'red',
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: '바울랩 매출',
+            font: {
+              size: 30,
+              weight: 'bold',
+            },
+            color: 'red',
+          },
+          legend: {
+            display: true,
+            position: 'bottom',
+          },
+          tooltips: {
+            enabled: false,
+          },
+          layout: {
+            padding: { top: 20, left: 20, right: 20, bottom: 20 },
+          }
+        }
+      },
+    })
+
+    let barChartFour = new Chart(myChartFour, {
+      type: 'line', // pie, line, doughnut, polarArea
+      data: {
+        labels: ['학원', '연구원', '출판사', '미디어사', '위니브'],
+        datasets: [{
+          label: '바울랩 매출액',
+          data: [400, 200, 250, 700, 1000],
+          backgroundColor: ['tomato', 'rgba(255, 255, 0, 0.5)', '#993300', 'skyblue', 'dodgerblue'],
+          borderWidth: 3,
+          borderColor: '#000',
+          hoverBorderWidth: 5,
+          hoverBorderColor: 'red',
+        }]
+      },
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: '바울랩 매출',
+            font: {
+              size: 30,
+              weight: 'bold',
+            },
+            color: 'red',
+          },
+          legend: {
+            display: true,
+            position: 'bottom',
+          },
+          tooltips: {
+            enabled: true,
+          },
+          layout: {
+            padding: { top: 20, left: 20, right: 20, bottom: 20 },
+          }
+        }
+      },
+    })
+  </script>
+</body>
+</html>
